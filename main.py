@@ -22,8 +22,8 @@ app = FastAPI(lifespan=lifespan)
 origins = [
     "http://localhost:5173",
     "http://localhost:5173/*",
-    os.environ.get["KOKOATALK_HOST"],
-    os.environ.get["KOKOATALK_HOST"] + '/*',
+    os.environ.get("KOKOATALK_HOST"),
+    os.environ.get("KOKOATALK_HOST") + '/*',
 ]
 
 app.add_middleware( 
