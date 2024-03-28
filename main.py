@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
+import os
 
 from routes.message_box import message_box
 from routes.auth import register
@@ -21,6 +22,8 @@ app = FastAPI(lifespan=lifespan)
 origins = [
     "http://localhost:5173",
     "http://localhost:5173/*",
+    os.environ.get("KOKOATALK_HOST"),
+    os.environ.get("KOKOATALK_HOST") + '/*',
 ]
 
 app.add_middleware( 
