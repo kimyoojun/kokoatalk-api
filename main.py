@@ -22,8 +22,8 @@ app = FastAPI(lifespan=lifespan)
 origins = [
     "http://localhost:5173",
     "http://localhost:5173/*",
-    os.environ.get("KOKOAFRONT_HOST"),
-    os.environ.get("KOKOAFRONT_HOST") + '/*',
+    "https://port-0-kokoatalk-44rk2blu9bhspu.sel5.cloudtype.app",
+    "https://port-0-kokoatalk-44rk2blu9bhspu.sel5.cloudtype.app",
 ]
 
 app.add_middleware( 
